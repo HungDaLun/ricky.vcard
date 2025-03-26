@@ -1,0 +1,462 @@
+:root {
+    --primary-color: #231814;
+    --secondary-color: #916d4e;
+    --accent-color: #DEB887;
+    --line-color: #06C755;
+    --android-color: #916d4e;
+    --apple-color: #916d4e;
+    --text-color: #4A3728;
+    --light-bg: #FDF5E6;
+    --card-bg: #FFFAF0;
+    --border-radius: 10px;
+    --box-shadow: 0 5px 15px rgba(35, 24, 20, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.photo-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: var(--box-shadow);
+    background-color: #f5f5f5;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.download-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+/* 統一按鈕樣式 */
+.download-btn,
+.download-btn.android-btn,
+.download-btn.card-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 15px !important;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    width: 200px !important;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    height: 46px !important;
+}
+
+.download-btn.android-btn {
+    background-color: var(--android-color);
+}
+
+.download-btn.card-btn {
+    background-color: #8E44AD;
+}
+
+.download-btn i {
+    margin-right: 8px;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* 按鈕懸停效果 */
+.download-btn:hover {
+    background-color: #A0522D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.download-btn.android-btn:hover {
+    background-color: #2EAF6E;
+}
+
+.download-btn.card-btn:hover {
+    background-color: #6C3483;
+}
+
+.section {
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.section h2 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-item i {
+    width: 30px;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.info-item .fa-line {
+    color: var(--line-color);
+}
+
+.info-item p {
+    margin-left: 10px;
+}
+
+.info-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.topic-list {
+    list-style-type: none;
+    margin-left: 10px;
+}
+
+.topic-list li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.topic-list li:before {
+    content: "\f138";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+.exp-item, .edu-item, .publication-item {
+    margin-bottom: 25px;
+}
+
+.exp-item:last-child, .edu-item:last-child, .publication-item:last-child {
+    margin-bottom: 0;
+}
+
+.exp-item h3, .edu-item h3, .publication-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.exp-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.exp-desc {
+    color: #666;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* 按鈕內容樣式 */
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .photo-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .download-btn,
+    .download-btn.android-btn,
+    .download-btn.card-btn {
+        width: 180px !important;
+        font-size: 0.85rem;
+        height: 42px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 20px 15px;
+    }
+    
+    .section {
+        padding: 20px 15px;
+    }
+    
+    .photo-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .title {
+        font-size: 1rem;
+    }
+    
+    .download-btn,
+    .download-btn.android-btn,
+    .download-btn.card-btn {
+        width: 100% !important;
+        max-width: 250px;
+        font-size: 0.85rem;
+        padding: 10px 15px !important;
+        height: 40px !important;
+    }
+    
+    .download-container {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+/* 提示對話框樣式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 85%;
+    width: 350px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+}
+
+.modal h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.modal p {
+    margin: 15px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.modal-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-btn:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* 數位名片區域樣式 */
+.business-card-section {
+    text-align: center;
+}
+
+.business-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.business-card-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.save-instruction {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-instruction i {
+    color: var(--secondary-color);
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .business-card-img {
+        max-width: 90%;
+    }
+    
+    .save-instruction {
+        font-size: 0.85rem;
+    }
+} 
